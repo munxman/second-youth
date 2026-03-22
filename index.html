@@ -1,0 +1,1004 @@
+<!-- v2 — peer review fixes applied 2026-03-22 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weight Regain Risk Score | Free Assessment | Second Youth</title>
+  <meta name="description" content="Discover your risk of weight regain after GLP-1 medication. Take our free 2-minute evidence-based assessment." />
+  <meta property="og:title" content="Weight Regain Risk Score | Free Assessment | Second Youth" />
+  <meta property="og:description" content="Discover your risk of weight regain after GLP-1 medication. Take our free 2-minute evidence-based assessment." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a1a2e;
+      --navy-mid: #16213e;
+      --green: #16a085;
+      --green-light: #1abc9c;
+      --red: #c0392b;
+      --amber: #d35400;
+      --yellow: #f39c12;
+      --white: #ffffff;
+      --off-white: #f8f9fa;
+      --border: #e0e5ec;
+      --text: #2c3e50;
+      --text-muted: #7f8c8d;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(26,26,46,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .logo span { color: var(--green-light); }
+    .header-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--white);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(22,160,133,0.18);
+      border: 1px solid rgba(22,160,133,0.4);
+      color: var(--green-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green-light);
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      margin: 0 auto 10px;
+      line-height: 1.6;
+    }
+    .hero-meta {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 0.06em;
+      margin-top: 6px;
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      flex: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 36px 16px 48px;
+    }
+
+    /* ── PROGRESS BAR (quiz progress) ── */
+    .quiz-progress-wrap {
+      margin-bottom: 28px;
+    }
+    .quiz-progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 7px;
+      letter-spacing: 0.04em;
+    }
+    .quiz-progress-bar {
+      height: 5px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      border-radius: 99px;
+      transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 28px;
+      margin-bottom: 20px;
+    }
+
+    /* ── QUESTION ── */
+    .question-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .question-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .question-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.45;
+    }
+
+    /* ── RADIO OPTIONS ── */
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option-label {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px 16px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.18s, background 0.18s;
+      font-size: 0.95rem;
+      color: var(--text);
+      position: relative;
+      user-select: none;
+    }
+    .option-label:hover {
+      border-color: var(--green);
+      background: rgba(22,160,133,0.04);
+    }
+    .option-label input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #bdc3c7;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: border-color 0.18s, background 0.18s;
+      position: relative;
+    }
+    .option-label input[type="radio"]:checked {
+      border-color: var(--green);
+      background: var(--green);
+    }
+    .option-label input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+    }
+    .option-label:has(input:checked) {
+      border-color: var(--green);
+      background: rgba(22,160,133,0.06);
+    }
+    .option-text { flex: 1; font-weight: 500; }
+
+    /* ── NAV BUTTONS ── */
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      justify-content: flex-end;
+    }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background 0.18s, transform 0.1s, box-shadow 0.18s;
+      letter-spacing: 0.02em;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 2px 12px rgba(22,160,133,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--green-light);
+      box-shadow: 0 4px 18px rgba(22,160,133,0.4);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1.5px solid var(--border);
+    }
+    .btn-secondary:hover {
+      border-color: #adb5bd;
+      color: var(--text);
+    }
+    .btn-ghost {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      cursor: pointer;
+      padding: 8px 12px;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .btn-ghost:hover { color: var(--text); }
+
+    /* ── ERROR ── */
+    .error-msg {
+      display: none;
+      font-size: 0.83rem;
+      color: var(--red);
+      font-weight: 600;
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: rgba(192,57,43,0.07);
+      border-radius: 6px;
+      border-left: 3px solid var(--red);
+    }
+    .error-msg.show { display: block; }
+
+    /* ── EMAIL CAPTURE ── */
+    .email-section {
+      text-align: center;
+    }
+    .email-section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .email-section p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.55;
+    }
+    .email-input-wrap {
+      display: flex;
+      gap: 10px;
+      max-width: 420px;
+      margin: 0 auto 14px;
+    }
+    .email-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.18s;
+    }
+    .email-input:focus { border-color: var(--green); }
+    .email-input::placeholder { color: #adb5bd; }
+    .privacy-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .skip-wrap { margin-top: 10px; }
+
+    /* ── RESULTS ── */
+    .results-section { text-align: center; }
+    .score-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .score-display {
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .score-max {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Score gauge bar */
+    .gauge-wrap {
+      margin: 20px auto 24px;
+      max-width: 400px;
+    }
+    .gauge-track {
+      height: 12px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #27ae60 0%, #f39c12 50%, #e74c3c 100%);
+      position: relative;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .gauge-needle {
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--navy);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: left 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+    .gauge-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 7px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Risk badge */
+    .risk-badge {
+      display: inline-block;
+      padding: 7px 20px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .risk-low    { background: rgba(39,174,96,0.12);  color: #1e8449; }
+    .risk-mod    { background: rgba(243,156,18,0.12); color: #b7770d; }
+    .risk-high   { background: rgba(231,76,60,0.12);  color: #c0392b; }
+    .risk-crit   { background: rgba(192,57,43,0.18);  color: #922b21; }
+
+    .risk-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .risk-description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto 24px;
+    }
+
+    /* Medical disclaimer on results */
+    .medical-disclaimer {
+      background: rgba(26,26,46,0.05);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 4px 0 20px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      text-align: left;
+    }
+
+    /* CTA block */
+    .cta-block {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      color: var(--white);
+      text-align: center;
+      margin-top: 8px;
+    }
+    .cta-block h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .cta-block p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 20px;
+      line-height: 1.55;
+    }
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .btn-cta-email {
+      background: var(--green);
+      color: var(--white);
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 12px rgba(22,160,133,0.4);
+      display: inline-block;
+    }
+    .btn-cta-email:hover {
+      background: var(--green-light);
+      box-shadow: 0 4px 20px rgba(22,160,133,0.5);
+    }
+    .btn-cta-phone {
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      display: inline-block;
+      transition: background 0.18s;
+    }
+    .btn-cta-phone:hover { background: rgba(255,255,255,0.18); }
+
+    /* Score breakdown */
+    .breakdown-toggle {
+      margin-top: 24px;
+      text-align: center;
+    }
+    .breakdown-toggle button {
+      background: none;
+      border: none;
+      color: var(--green);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 4px;
+    }
+    .breakdown-list {
+      display: none;
+      margin-top: 16px;
+      text-align: left;
+    }
+    .breakdown-list.open { display: block; }
+    .breakdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      gap: 12px;
+    }
+    .breakdown-item:last-child { border-bottom: none; }
+    .breakdown-q { color: var(--text-muted); flex: 1; }
+    .breakdown-a { font-weight: 600; color: var(--navy); text-align: right; }
+    .breakdown-pts {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pts-0 { background: rgba(39,174,96,0.12); color: #1e8449; }
+    .pts-1 { background: rgba(243,156,18,0.10); color: #b7770d; }
+    .pts-2 { background: rgba(231,76,60,0.10); color: #c0392b; }
+    .pts-3 { background: rgba(192,57,43,0.16); color: #922b21; }
+
+    .restart-wrap {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .trust-icon {
+      font-size: 1.1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 18px 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+    footer a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.9); }
+    footer .footer-disclaimer {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+    }
+
+    /* ── HIDDEN / SHOWN ── */
+    .hidden { display: none !important; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.4s ease forwards; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 520px) {
+      .card { padding: 22px 16px; }
+      .hero { padding: 40px 16px 36px; }
+      .email-input-wrap { flex-direction: column; }
+      .cta-actions { flex-direction: column; align-items: stretch; }
+      .btn-cta-email, .btn-cta-phone { text-align: center; }
+      .nav-buttons { justify-content: stretch; }
+      .btn { flex: 1; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo"><span>Second</span> Youth</a>
+  <span class="header-tag">Evidence-Based Assessment</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Free · 2 Minutes · Confidential</div>
+  <h1>Your <em>Weight Regain</em><br>Risk Score</h1>
+  <p>Answer 5 questions and discover how protected your progress is — based on clinical evidence in GLP-1 medication outcomes.</p>
+  <div class="hero-meta">No sign-up required &nbsp;·&nbsp; Results instant</div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><span class="trust-icon">🔒</span> 100% Private</div>
+  <div class="trust-item"><span class="trust-icon">⏱</span> 2-Minute Assessment</div>
+  <div class="trust-item"><span class="trust-icon">📊</span> Evidence-Based Scoring</div>
+  <div class="trust-item"><span class="trust-icon">🏥</span> Clinician-Designed</div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- ══ QUIZ SECTION ══ -->
+  <div id="quizSection">
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-label">
+        <span id="progressText">Question 1 of 5</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="card fade-up" id="questionCard">
+      <div class="question-header">
+        <div class="question-number" id="qNum">1</div>
+        <div class="question-text" id="qText"></div>
+      </div>
+      <div class="options" id="optionsWrap"></div>
+      <div class="error-msg" id="errorMsg">Please select an answer to continue.</div>
+      <div class="nav-buttons">
+        <button class="btn btn-secondary hidden" id="btnBack" onclick="goBack()">← Back</button>
+        <button class="btn btn-primary" id="btnNext" onclick="goNext()">Continue →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ EMAIL CAPTURE SECTION ══ -->
+  <div id="emailSection" class="hidden">
+    <div class="card fade-up email-section">
+      <h2>Almost there — get your report</h2>
+      <p>Enter your email to receive a personalised Weight Maintenance summary.<br>No spam, ever.</p>
+      <div class="email-input-wrap">
+        <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" />
+        <button class="btn btn-primary" onclick="submitEmail()">Send Report</button>
+      </div>
+      <div class="privacy-note">🔒 Your data stays private. We never share or sell it.</div>
+      <div class="skip-wrap">
+        <button class="btn-ghost" onclick="skipEmail()">Skip and see results →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RESULTS SECTION ══ -->
+  <div id="resultsSection" class="hidden">
+    <div class="card fade-up results-section">
+
+      <div class="score-label">Your Risk Score</div>
+      <div class="score-display" id="scoreDisplay">—</div>
+      <div class="score-max">out of 15</div>
+
+      <div class="gauge-wrap">
+        <div class="gauge-track">
+          <div class="gauge-needle" id="gaugeNeedle"></div>
+        </div>
+        <div class="gauge-labels">
+          <span>Low</span>
+          <span>Moderate</span>
+          <span>High</span>
+          <span>Very High</span>
+        </div>
+      </div>
+
+      <div class="risk-badge" id="riskBadge"></div>
+      <div class="risk-title" id="riskTitle"></div>
+      <div class="risk-description" id="riskDescription"></div>
+
+      <!-- Medical disclaimer — visible on results page -->
+      <div class="medical-disclaimer">
+        ⚕️ <strong>Educational use only.</strong> This assessment is for educational purposes only and does not constitute medical advice. Consult your healthcare provider for personalized guidance before making any changes to your treatment plan.
+      </div>
+
+      <!-- CTA — shown for Moderate+ -->
+      <div class="cta-block hidden" id="ctaBlock">
+        <h3>Book a Free 15-Minute Weight Maintenance Assessment</h3>
+        <p>Our specialists can help design a structured plan to support your progress — whether you're still on medication or planning your transition.</p>
+        <div class="cta-actions">
+          <a href="mailto:hello@secondyouth.health?subject=Weight%20Maintenance%20Assessment%20Request&body=Hi%2C%20I%20just%20completed%20the%20Weight%20Regain%20Risk%20Score%20assessment%20and%20would%20like%20to%20book%20a%20free%2015-minute%20consultation." class="btn-cta-email">📧 Contact Us to Book</a>
+        </div>
+      </div>
+
+      <!-- Breakdown -->
+      <div class="breakdown-toggle">
+        <button onclick="toggleBreakdown()">▸ View my score breakdown</button>
+      </div>
+      <div class="breakdown-list" id="breakdownList"></div>
+
+      <div class="restart-wrap">
+        <button class="btn btn-secondary" onclick="restartQuiz()" style="margin-top:8px;">Retake Assessment</button>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>Second Youth &nbsp;|&nbsp; Evidence-Based Weight Management</p>
+  <p class="footer-disclaimer">This assessment is for educational purposes only and does not constitute medical advice. Consult a healthcare professional for personalised guidance. The scoring reflects general risk factors identified in clinical research and has not been individually validated for clinical diagnosis.</p>
+</footer>
+
+<script>
+  /* ── QUESTIONS & SCORING ── */
+  const questions = [
+    {
+      text: "How long have you been on GLP-1 medication?",
+      options: [
+        { label: "Less than 3 months",  score: 3 },
+        { label: "3–6 months",          score: 2 },
+        { label: "6–12 months",         score: 1 },
+        { label: "More than 12 months", score: 0 }
+      ]
+    },
+    {
+      text: "How many times per week do you exercise for 30+ minutes?",
+      options: [
+        { label: "0",    score: 3 },
+        { label: "1–2",  score: 2 },
+        { label: "3–4",  score: 1 },
+        { label: "5+",   score: 0 }
+      ]
+    },
+    {
+      text: "Have you made structured dietary changes alongside your medication?",
+      options: [
+        { label: "No changes",                 score: 3 },
+        { label: "Some changes",               score: 2 },
+        { label: "Working with a nutritionist",score: 1 },
+        { label: "Complete meal plan",         score: 0 }
+      ]
+    },
+    {
+      text: "What is your current approach to weight maintenance planning?",
+      options: [
+        { label: "Haven't thought about it",   score: 3 },
+        { label: "Thinking about it",          score: 2 },
+        { label: "Have a basic plan",          score: 1 },
+        { label: "Working with a professional",score: 0 }
+      ]
+    },
+    {
+      text: "Have you experienced weight regain after stopping a previous weight loss attempt?",
+      options: [
+        { label: "Yes, significant regain",    score: 3 },
+        { label: "Yes, some regain",           score: 2 },
+        { label: "No previous attempts",       score: 1 },
+        { label: "No, maintained successfully",score: 0 }
+      ]
+    }
+  ];
+
+  const riskLevels = [
+    {
+      maxScore: 4,
+      label: "LOW RISK",
+      badgeClass: "risk-low",
+      title: "Your foundation looks solid.",
+      description: "Your habits and planning put you in a strong position to maintain your results. Keep building on what's working — consistency over perfection. A periodic check-in with a specialist can help you stay on track as your medication regimen evolves."
+    },
+    {
+      maxScore: 8,
+      label: "MODERATE RISK",
+      badgeClass: "risk-mod",
+      title: "Some gaps could leave you exposed.",
+      description: "You've made progress, but there are areas in your maintenance strategy that could use strengthening. Gaps in exercise, diet structure, or long-term planning are where regain most commonly begins. A structured assessment can help close those gaps before they become problems."
+    },
+    {
+      maxScore: 12,
+      label: "HIGH RISK",
+      badgeClass: "risk-high",
+      title: "Your progress deserves protection.",
+      description: "Multiple factors suggest you may be at higher risk of weight regain — particularly if you stop or change your medication. Among patients who discontinue GLP-1 medication without a structured maintenance plan, research shows that two-thirds of lost weight is typically regained within one year (Wilding et al., 2022). A structured assessment can help identify what to address."
+    },
+    {
+      maxScore: 15,
+      label: "VERY HIGH RISK",
+      badgeClass: "risk-crit",
+      title: "A structured maintenance plan is strongly recommended.",
+      description: "Your responses reflect multiple factors associated with higher weight regain risk in clinical research. Understanding and proactively addressing these factors — with the right support — can significantly improve your long-term outcomes. A consultation with a specialist can help identify the most important areas to focus on."
+    }
+  ];
+
+  /* ── STATE ── */
+  let currentQ = 0;
+  let answers  = []; // { optionIndex, score, label }
+
+  /* ── INIT ── */
+  function init() {
+    currentQ = 0;
+    answers  = [];
+    renderQuestion();
+    show('quizSection');
+    hide('emailSection');
+    hide('resultsSection');
+  }
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    document.getElementById('qNum').textContent  = currentQ + 1;
+    document.getElementById('qText').textContent = q.text;
+
+    const wrap = document.getElementById('optionsWrap');
+    wrap.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const existing = answers[currentQ];
+      const checked  = existing && existing.optionIndex === i;
+      wrap.innerHTML += `
+        <label class="option-label">
+          <input type="radio" name="q${currentQ}" value="${i}" ${checked ? 'checked' : ''} onchange="onSelect()"/>
+          <span class="option-text">${opt.label}</span>
+        </label>`;
+    });
+
+    // Progress
+    const pct = Math.round((currentQ / questions.length) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = `Question ${currentQ + 1} of ${questions.length}`;
+    document.getElementById('progressPct').textContent  = pct + '%';
+
+    // Back button
+    currentQ > 0 ? show('btnBack') : hide('btnBack');
+
+    // Button label
+    document.getElementById('btnNext').textContent =
+      currentQ === questions.length - 1 ? 'See My Results →' : 'Continue →';
+
+    clearError();
+    document.getElementById('questionCard').classList.remove('fade-up');
+    void document.getElementById('questionCard').offsetWidth; // reflow
+    document.getElementById('questionCard').classList.add('fade-up');
+  }
+
+  function onSelect() { clearError(); }
+
+  function goNext() {
+    const selected = document.querySelector(`input[name="q${currentQ}"]:checked`);
+    if (!selected) { showError(); return; }
+
+    const idx = parseInt(selected.value);
+    answers[currentQ] = {
+      optionIndex: idx,
+      score: questions[currentQ].options[idx].score,
+      label: questions[currentQ].options[idx].label,
+      questionText: questions[currentQ].text
+    };
+
+    if (currentQ < questions.length - 1) {
+      currentQ++;
+      renderQuestion();
+    } else {
+      showEmailCapture();
+    }
+  }
+
+  function goBack() {
+    if (currentQ > 0) { currentQ--; renderQuestion(); }
+  }
+
+  function showError() {
+    document.getElementById('errorMsg').classList.add('show');
+  }
+  function clearError() {
+    document.getElementById('errorMsg').classList.remove('show');
+  }
+
+  /* ── EMAIL CAPTURE ── */
+  function showEmailCapture() {
+    hide('quizSection');
+    show('emailSection');
+    document.getElementById('emailSection').querySelector('.card').classList.remove('fade-up');
+    void document.getElementById('emailSection').offsetWidth;
+    document.getElementById('emailSection').querySelector('.card').classList.add('fade-up');
+  }
+
+  function submitEmail() {
+    const email = document.getElementById('emailInput').value.trim();
+    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      localStorage.setItem('sy_quiz_email', email);
+    }
+    showResults();
+  }
+
+  function skipEmail() { showResults(); }
+
+  /* ── RESULTS ── */
+  function showResults() {
+    hide('emailSection');
+    show('resultsSection');
+
+    const totalScore = answers.reduce((sum, a) => sum + a.score, 0);
+    const risk = riskLevels.find(r => totalScore <= r.maxScore);
+
+    // Score
+    document.getElementById('scoreDisplay').textContent = totalScore;
+
+    // Needle position (0–100%)
+    const needlePct = (totalScore / 15) * 100;
+    document.getElementById('gaugeNeedle').style.left = needlePct + '%';
+
+    // Badge & text
+    const badge = document.getElementById('riskBadge');
+    badge.textContent  = risk.label;
+    badge.className    = 'risk-badge ' + risk.badgeClass;
+    document.getElementById('riskTitle').textContent       = risk.title;
+    document.getElementById('riskDescription').textContent = risk.description;
+
+    // CTA for moderate+
+    if (totalScore >= 5) {
+      show('ctaBlock');
+    } else {
+      hide('ctaBlock');
+    }
+
+    // Breakdown
+    const list = document.getElementById('breakdownList');
+    list.innerHTML = answers.map(a => `
+      <div class="breakdown-item">
+        <span class="breakdown-q">${a.questionText}</span>
+        <span class="breakdown-a">${a.label}</span>
+        <span class="breakdown-pts pts-${a.score}">${a.score}</span>
+      </div>`).join('');
+
+    // Store in localStorage
+    localStorage.setItem('sy_quiz_score', totalScore);
+    localStorage.setItem('sy_quiz_risk',  risk.label);
+    localStorage.setItem('sy_quiz_date',  new Date().toISOString());
+
+    // Animate results card
+    const card = document.getElementById('resultsSection').querySelector('.card');
+    card.classList.remove('fade-up');
+    void card.offsetWidth;
+    card.classList.add('fade-up');
+
+    // Scroll to top of results
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleBreakdown() {
+    const list = document.getElementById('breakdownList');
+    const btn  = document.querySelector('.breakdown-toggle button');
+    if (list.classList.contains('open')) {
+      list.classList.remove('open');
+      btn.textContent = '▸ View my score breakdown';
+    } else {
+      list.classList.add('open');
+      btn.textContent = '▾ Hide score breakdown';
+    }
+  }
+
+  function restartQuiz() {
+    document.getElementById('emailInput').value = '';
+    init();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* ── HELPERS ── */
+  function show(id) { document.getElementById(id).classList.remove('hidden'); }
+  function hide(id) { document.getElementById(id).classList.add('hidden'); }
+
+  /* ── START ── */
+  init();
+</script>
+</body>
+</html>
